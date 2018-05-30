@@ -14,5 +14,10 @@ namespace PDM
             String str = HttpContext.Current.Request.ServerVariables.ToString();
             
         }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            Response.Write("FirstName:"+txtFname.Text+"Full Name:"+txtFullName.Text+"Father Name:"+txtFatherName.Text);
+        }
     }
 }

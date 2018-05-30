@@ -8,8 +8,42 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    Aws  Code Demo by bhaskar
-        from hyderabad
+  <asp:Label runat="server">
+        Registration Form:
+  </asp:Label>
+        <table>
+            <tr>
+                <td>
+                    <asp:Label runat="server" ID="lblFname">First Name:</asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox runat="server" ID="txtFname"></asp:TextBox>
+                </td>
+            </tr>
+                        <tr>
+                <td>
+                    <asp:Label runat="server" ID="lblFullName">Full Name:</asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox runat="server" ID="txtFullName"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label runat="server" ID="lblFatherName">Father Name:</asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox runat="server" ID="txtFatherName"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Button runat="server" ID="btnSubmit" Text="Submit" OnClick="btnSubmit_Click" />
+                </td>
+                <td></td>
+            </tr>
+        </table>
+        
     </form>
 </body>
 </html>

@@ -1,0 +1,10 @@
+node {
+//stage 'Source'
+//	checkout scm
+//stage 'Build'
+//	bat 'c:\\Software\\nuget.exe restore PDM.sln'
+//	bat '"C:\\Program Files (x86)\\MSBuild\\14.0\\Bin\\MSBuild.exe" "D:\\KARTHIK\\Samples\\PDM\\PDM\\PDM.sln" /t:Rebuild'
+stage 'Deploy'
+	bat '"C:\\Program Files (x86)\\MSBuild\\14.0\\Bin\\MSBuild.exe" C:\\Program Files (x86)\\Jenkins\\workspace\\DeployDemoPipeLine\\PDM\\PDM.csproj" /T:Package /P:Configuration=Release'
+    bat '"C:\\Program Files (x86)\\IIS\\Microsoft Web Deploy V3\\msdeploy.exe" -verb:sync -source:iisApp="C:\\Program Files (x86)\\Jenkins\\workspace\\DeployDemoPipeLine\\" -dest:iisApp="Default Web Site",ComputerName="https://18.219.76.84:8172/MsDeploy.axd",UserName=\'Administrator\',Password=\'Spring1988@\',AuthType=\'Basic\' -allowUntrusted'	
+}
